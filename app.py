@@ -21,8 +21,8 @@ def login():
 # Rota para lidar com o processo de login
 @app.route('/login', methods=['POST'])
 def login_post():
-    login = request.form['login']
-    senha = request.form['senha']
+    login = request.form['username']
+    senha = request.form['password']
 
     cursor.execute("select * from Usuarios WHERE Login = %s AND Senha = %s", (login, senha))
     user = cursor.fetchone()
